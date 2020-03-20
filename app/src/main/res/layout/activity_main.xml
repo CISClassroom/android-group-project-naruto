@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C4BB74"
     tools:context=".MainActivity">
-
     <Button
         android:id="@+id/main_emailBtn"
         android:layout_width="wrap_content"
