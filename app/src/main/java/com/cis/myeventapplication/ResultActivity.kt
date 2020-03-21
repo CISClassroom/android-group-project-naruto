@@ -72,8 +72,8 @@ class ResultActivity : AppCompatActivity() {
         if (mAuthListener != null){ mAuth!!.removeAuthStateListener { mAuthListener }}
     }
 
-    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
-        if (keyCode == KeyEvent.KEYCODE_BACK){moveTaskToBack(true)}
-        return super.onKeyDown(keyCode, event)
-    }
+//    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+//        if (keyCode == KeyEvent.KEYCODE_BACK){moveTaskToBack(true)}
+//        return super.onKeyDown(keyCode, event)
+//    }
 }
