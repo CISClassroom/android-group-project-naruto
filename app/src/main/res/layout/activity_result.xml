@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ResultActivity">
+    tools:context=".ResultActivity"
+    android:background="@drawable/Wallpaper15">
 
     <TextView
         android:id="@+id/textView"
@@ -54,8 +55,8 @@
 
     <Button
         android:id="@+id/result_signOutBtn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="219dp"
+        android:layout_height="52dp"
         android:text="SignOut"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

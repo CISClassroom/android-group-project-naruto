@@ -4,21 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:background="@drawable/Wallpaper15">
 
     <EditText
         android:id="@+id/login_emaileditText"
         android:layout_width="322dp"
         android:layout_height="50dp"
+        android:drawableTint="#FFFFFF"
         android:ems="10"
         android:hint="email"
         android:inputType="textPersonName"
+        android:shadowColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.431" />
+        app:layout_constraintVertical_bias="0.475" />
 
     <EditText
         android:id="@+id/login_passwordeditText2"
@@ -33,18 +36,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_emaileditText"
-        app:layout_constraintVertical_bias="0.067" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/login_loginBtn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="243dp"
+        android:layout_height="50dp"
         android:background="#F0D918"
         android:text="Sign in"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_passwordeditText2"
-        app:layout_constraintVertical_bias="0.276" />
+        app:layout_constraintVertical_bias="0.303" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="207dp"
+        android:layout_height="185dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/imagesremovebgpreview"
+        tools:layout_editor_absoluteY="79dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
