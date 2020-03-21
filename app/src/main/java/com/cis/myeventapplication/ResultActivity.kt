@@ -42,6 +42,7 @@ class ResultActivity : AppCompatActivity() {
         result_addeventbutton.setOnClickListener {
             val i = Intent(this,addeventActivity::class.java)
             startActivity(i)
+            Toast.makeText(this,"บันทึกข้อมูลกิจกรรม",Toast.LENGTH_LONG).show()
         }
     }
 
