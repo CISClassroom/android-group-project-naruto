@@ -13,7 +13,7 @@
         android:layout_height="50dp"
         android:drawableTint="#FFFFFF"
         android:ems="10"
-        android:hint="email"
+        android:hint="Please Enter your Email"
         android:inputType="textPersonName"
         android:shadowColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,34 +23,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.439" />
 
-    <EditText
-        android:id="@+id/login_passwordeditText2"
-        android:layout_width="319dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="220dp"
-        android:ems="10"
-        android:hint="Password"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_emaileditText"
-        app:layout_constraintVertical_bias="0.22" />
-
     <Button
         android:id="@+id/login_loginBtn"
         android:layout_width="160dp"
         android:layout_height="43dp"
+        android:layout_marginBottom="200dp"
         android:background="#FFFFFF"
         android:text="Sign in"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_passwordeditText2"
-        app:layout_constraintVertical_bias="0.303" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -61,4 +45,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/imagesremovebgpreview" />
+
+    <EditText
+        android:id="@+id/login_passwordeditText2"
+        android:layout_width="326dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="numberPassword"
+        android:hint="Please Enter your Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_emaileditText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
