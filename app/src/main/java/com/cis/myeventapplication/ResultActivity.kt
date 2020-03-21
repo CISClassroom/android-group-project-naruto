@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_result.*
@@ -14,6 +16,9 @@ class ResultActivity : AppCompatActivity() {
     var mAuth: FirebaseAuth? = null
     var mAuthListener:FirebaseAuth.AuthStateListener? = null
     private val TAG:String = "Result Activity"
+
+    var information_nameevent:TextView? = null
+    var information_detailevent:EditText? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +37,17 @@ class ResultActivity : AppCompatActivity() {
                 finish()
             }
         }
+
+        information_nameevent = findViewById(R.id.getname) as TextView
+        information_detailevent = findViewById(R.id.getdetail) as EditText
+
+        var intent = getIntent()
+
+        information_nameevent!!.setText(""+intent.getStringExtra("Nameevent"))
+        information_detailevent!!.setText(""+intent.getStringExtra("detailevent"))
+
+
+
         result_signOutBtn.setOnClickListener {
             mAuth!!.signOut()
             Toast.makeText(this,"Signed Out", Toast.LENGTH_LONG).show()
