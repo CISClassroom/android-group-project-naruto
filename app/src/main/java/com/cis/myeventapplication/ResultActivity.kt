@@ -23,7 +23,7 @@ class ResultActivity : AppCompatActivity() {
         val user = mAuth!!.currentUser
 
         result_emaildata.text = user!!.email
-        result_uiddata.text = user!!.uid
+//        result_uiddata.text = user!!.uid
 
         mAuthListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
             val users =firebaseAuth.currentUser
@@ -37,6 +37,11 @@ class ResultActivity : AppCompatActivity() {
             Toast.makeText(this,"Signed Out", Toast.LENGTH_LONG).show()
             startActivity(Intent(this@ResultActivity,MainActivity::class.java))
             finish()
+        }
+
+        result_addeventbutton.setOnClickListener {
+            val i = Intent(this,addeventActivity::class.java)
+            startActivity(i)
         }
     }
 
