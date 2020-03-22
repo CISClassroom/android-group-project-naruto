@@ -107,5 +107,17 @@
         <item>ด้านที่ 4 การสร้างคุณธรรมจริยธรรมและศีลธรรม</item>
         <item>ด้านที่ 5 การอนุรักษ์ศิลปวัฒนธรรมไทยและภูมิปัญญาท้องถิ่น</item>
     </string-array>
+
+    <string-array name="items">
+        <item>item1</item>
+        <item>item2</item>
+        <item>item3</item>
+        <item>item4</item>
+        <item>item5</item>
+        <item>item6</item>
+        <item>item7</item>
+        <item>item8</item>
+        <item>item9</item>
+    </string-array>
 </resources>
 

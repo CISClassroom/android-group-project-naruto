@@ -75,13 +75,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/thsarabunnewbold"
+        android:text="name"
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/getdetail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.882" />
 
     <TextView
         android:id="@+id/getdetail"
@@ -89,21 +90,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="544dp"
+        android:layout_marginBottom="260dp"
         android:fontFamily="@font/thsarabunnewbold"
+        android:text="detail"
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/result_addeventbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <ListView
-        android:layout_width="337dp"
-        android:layout_height="418dp"
-        app:layout_constraintBottom_toTopOf="@+id/student_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/getdetail" />
 
     <Button
         android:id="@+id/student_button"
