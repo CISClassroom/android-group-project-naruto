@@ -17,8 +17,8 @@ class ResultActivity : AppCompatActivity() {
     var mAuthListener:FirebaseAuth.AuthStateListener? = null
     private val TAG:String = "Result Activity"
 
-    var information_nameevent:TextView? = null
-    var information_detailevent:EditText? = null
+   lateinit var information_nameevent:TextView
+    lateinit var information_detailevent:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +39,7 @@ class ResultActivity : AppCompatActivity() {
         }
 
         information_nameevent = findViewById(R.id.getname) as TextView
-        information_detailevent = findViewById(R.id.getdetail) as EditText
+        information_detailevent = findViewById(R.id.getdetail) as TextView
 
         var intent = getIntent()
 

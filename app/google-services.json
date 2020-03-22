@@ -1,42 +1,34 @@
 {
   "project_info": {
-    "project_number": "400836880646",
-    "firebase_url": "https://appfirebaseproject-f20f7.firebaseio.com",
-    "project_id": "appfirebaseproject-f20f7",
-    "storage_bucket": "appfirebaseproject-f20f7.appspot.com"
+    "project_number": "557236689692",
+    "firebase_url": "https://myeventapplication-d8188.firebaseio.com",
+    "project_id": "myeventapplication-d8188",
+    "storage_bucket": "myeventapplication-d8188.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:400836880646:android:b7d6996c52bbd114c85687",
+        "mobilesdk_app_id": "1:557236689692:android:b502ecb91abaf8aa0c78d9",
         "android_client_info": {
-          "package_name": "com.cis.mydatabaseapplication"
+          "package_name": "com.cis.myeventapplication"
         }
       },
       "oauth_client": [
         {
-          "client_id": "400836880646-viqgfnkrtj3565bt15cse1f5p3e7erdi.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.cis.mydatabaseapplication",
-            "certificate_hash": "1fb2eb56e42d8edc7a83c14c48fa87ab7033ff07"
-          }
-        },
-        {
-          "client_id": "400836880646-j0qb2fo3es2sup5plgc27c44bo1afrjt.apps.googleusercontent.com",
+          "client_id": "557236689692-29at2leliqovnhc8rt214j5v6bpd1hmk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBbdZ4BYdiHfbTNyqqtBwm-NQnJaRNsT4E"
+          "current_key": "AIzaSyCPU3RSbsDj-Ctlw-3HJoyYyLUUaWHbaII"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "400836880646-j0qb2fo3es2sup5plgc27c44bo1afrjt.apps.googleusercontent.com",
+              "client_id": "557236689692-29at2leliqovnhc8rt214j5v6bpd1hmk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
