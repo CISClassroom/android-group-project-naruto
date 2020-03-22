@@ -27,35 +27,6 @@ class addeventActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_addevent)
 
-
-        // Write a message to the database
-
-        // Write a message to the database
-        val database = FirebaseDatabase.getInstance()
-        val myRef = database.getReference("message")
-
-        myRef.setValue("Hello, World!")
-
-        // Read from the database
-
-        // Read from the database
-        myRef.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                val value =
-                    dataSnapshot.getValue(String::class.java)
-                Log.d(TAG, "Value is: $value")
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException())
-            }
-        })
-
-
-
         addevent_name = findViewById(R.id.addevent_nameEditText3) as EditText
         addevent_detail = findViewById(R.id.addevent_detailEditText4) as EditText
         addevent_save = findViewById(R.id.addevent_saveBtn) as Button
@@ -66,10 +37,11 @@ class addeventActivity : AppCompatActivity() {
            val intent = Intent(this,ResultActivity::class.java)
            intent.putExtra("Nameevent",""+addevent_name!!.getText().toString())
             intent.putExtra("detailevent",""+addevent_detail!!.getText().toString())
-            startActivity(intent)
 
+            if(addevent_name.text.isNotEmpty() && addevent_detail.text.isNotEmpty()){
+                startActivity(intent)
+            }
         }
-
 
     }
     private fun saveEvent(){

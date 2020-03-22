@@ -13,6 +13,7 @@ class LoginActivity : AppCompatActivity() {
 
     var mAuth:FirebaseAuth? = null
     private val TAG:String = "Login Activity"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
