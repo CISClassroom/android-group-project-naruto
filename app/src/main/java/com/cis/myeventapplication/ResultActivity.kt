@@ -92,6 +92,11 @@ class ResultActivity : AppCompatActivity() {
             startActivity(Intent(this@ResultActivity,StudentActivity::class.java))
             Toast.makeText(this,"รายชื่อนักศึกษาชั้นปีที่ 3 สาขาวิทยกาคอมพิวเตอร์และสารสนเทศ",Toast.LENGTH_LONG).show()
         }
+
+//        button.setOnClickListener {
+//            startActivity(Intent(this@ResultActivity,EventActivity::class.java))
+//            finish()
+//        }
     }
 
     override fun onStart() {
