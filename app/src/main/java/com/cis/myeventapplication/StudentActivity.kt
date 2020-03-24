@@ -1,5 +1,6 @@
 package com.cis.myeventapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -23,10 +24,15 @@ class StudentActivity : AppCompatActivity() {
 
 
         listview = findViewById(R.id.listview)
-        val event = arrayOf("comseeit","comcamp")
-        listview.adapter = ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,event)
+//        val event = arrayOf("comseeit","comcamp")
+//        listview.adapter = ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,event)
 
-        //listview.setOnItemClickListener{parent: AdapterView<*>?, view: View?, position: Int, id: Long ->  }
+        listview.setOnItemClickListener{parent: AdapterView<*>?, view: View?, position: Int, id: Long ->
+
+            startActivity(Intent(this@StudentActivity,addeventActivity::class.java))
+
+
+        }
 
     }
 }
