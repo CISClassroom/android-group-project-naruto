@@ -19,6 +19,10 @@ class addeventActivity : AppCompatActivity() {
     lateinit var addevent_detail:EditText
     lateinit var  addevent_save: Button
     lateinit var spinner: Spinner
+    lateinit var amounteditText: EditText
+    lateinit var dateStart: EditText
+    lateinit var dateEnd: EditText
+
     var valueofspinner = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +32,9 @@ class addeventActivity : AppCompatActivity() {
         addevent_detail = findViewById(R.id.addevent_detailEditText4) as EditText
         addevent_save = findViewById(R.id.addevent_saveBtn) as Button
         spinner = findViewById(R.id.spinner) as Spinner
+        amounteditText = findViewById(R.id.amounteditText) as EditText
+        dateStart = findViewById(R.id.dateStart) as EditText
+        dateEnd = findViewById(R.id.dateEnd) as EditText
 
         val t = resources.getStringArray(R.array.credit)
         val adapter = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,t)
@@ -51,9 +58,15 @@ class addeventActivity : AppCompatActivity() {
            val intent = Intent(this,ResultActivity::class.java)
            intent.putExtra("Nameevent",""+addevent_name!!.getText().toString())
             intent.putExtra("detailevent",""+addevent_detail!!.getText().toString())
+            intent.putExtra("amount",""+amounteditText!!.getText().toString())
+            intent.putExtra("dateStart",""+dateStart!!.getText().toString())
+            intent.putExtra("dateEnd",""+dateEnd!!.getText().toString())
 
-
-            if(addevent_name.text.isNotEmpty() && addevent_detail.text.isNotEmpty() ){
+            if(addevent_name.text.isNotEmpty()
+                && addevent_detail.text.isNotEmpty()
+                && amounteditText.text.isNotEmpty()
+                && dateStart.text.isNotEmpty()
+                && dateEnd.text.isNotEmpty()){
                 startActivity(intent)
             }
         }
@@ -62,34 +75,55 @@ class addeventActivity : AppCompatActivity() {
     private fun saveEvent(){
         val nameEvent = addevent_name.text.toString().trim()
         if (nameEvent.isEmpty()){
-            addevent_nameEditText3.error = "Please enter a name of Event"
-            Toast.makeText(this,"Please enter a name of Event",Toast.LENGTH_LONG).show()
+            //addevent_nameEditText3.error = "Please enter a name of Event"
+            Toast.makeText(this,"กรุณาใส่ชื่อกิจกรรม",Toast.LENGTH_SHORT).show()
             return
         }
 
 
         val detailEvent = addevent_detailEditText4.text.toString()
         if (detailEvent.isEmpty()){
-            //ฝaddevent_detail.error = "Please enter a description of Event"
-            Toast.makeText(this,"Please enter a description of Event",Toast.LENGTH_LONG).show()
+            //addevent_detail.error = "Please enter a description of Event"
+            Toast.makeText(this,"กรุณาใส่คำอธิบายกิจกรมม",Toast.LENGTH_SHORT).show()
             return
         }
 
       val typeEvent =  valueofspinner.toString()
         if (typeEvent.isEmpty()){
-            Toast.makeText(this,"Please choose a type of Event",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"กรุณาเลือกด้านกิจกรรม",Toast.LENGTH_SHORT).show()
             return
         }
+
+        val amount = amounteditText.text.toString()
+        if (amount.isEmpty()){
+            Toast.makeText(this,"กรุณากรอกจำนวนหน่วยกิต",Toast.LENGTH_SHORT).show()
+            return
+
+        }
+
+
+        val dateStart = dateStart.text.toString()
+        if (dateStart.isEmpty()){
+            Toast.makeText(this,"กรุณากรอกวันที่เริ่มกิจกรรม",Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val dateEnd = dateEnd.text.toString()
+        if (dateEnd.isEmpty()){
+            Toast.makeText(this,"กรุณากรอกวันสิ้นสุดกิจกรรม",Toast.LENGTH_SHORT).show()
+            return
+        }
+
 
         val ref = FirebaseDatabase.getInstance().getReference("events")
 
         val event_id = ref.push().key
 
-        val events_student = event_id?.let { Event(it,nameEvent, detailEvent,typeEvent)}
+        val events_student = event_id?.let { Event(it,nameEvent, detailEvent,typeEvent,amount,dateStart,dateEnd)}
 
         if (event_id != null) {
             ref.child(event_id).setValue(events_student).addOnCompleteListener {
-                Toast.makeText(applicationContext,"Event save successful",Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext,"บันทึกกิจกรรมแล้ว",Toast.LENGTH_SHORT).show()
             }
         }
     }

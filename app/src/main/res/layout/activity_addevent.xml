@@ -48,7 +48,7 @@
         android:id="@+id/addevent_nameEditText3"
         android:layout_width="211dp"
         android:layout_height="39dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="52dp"
         android:ems="10"
         android:fontFamily="@font/thsarabunnewbold"
         android:hint="Please enter name of event."
@@ -62,9 +62,8 @@
 
     <EditText
         android:id="@+id/addevent_detailEditText4"
-        android:layout_width="289dp"
-        android:layout_height="209dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="254dp"
+        android:layout_height="103dp"
         android:ems="10"
         android:fontFamily="@font/thsarabunnewbold"
         android:gravity="start|top"
@@ -99,10 +98,56 @@
         android:entries="@array/credit"
         app:layout_constraintBottom_toTopOf="@+id/addevent_saveBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addevent_detailEditText4"
-        app:layout_constraintVertical_bias="0.037"
+        app:layout_constraintVertical_bias="0.0"
         app:ms_multiline="true" />
+
+    <EditText
+        android:id="@+id/amounteditText"
+        android:layout_width="236dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:fontFamily="@font/thsarabunnewbold"
+        android:hint="จำนวนหน่วยกิต"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/addevent_saveBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/dateStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        android:hint="dd/mm/YY"
+        android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/addevent_saveBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amounteditText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/dateEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="dd/mm/YY"
+        android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/addevent_saveBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateStart"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

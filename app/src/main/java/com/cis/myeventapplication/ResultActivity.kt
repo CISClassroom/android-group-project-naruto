@@ -23,8 +23,8 @@ class ResultActivity : AppCompatActivity() {
     private val TAG:String = "Result Activity"
 
 
-    lateinit var information_nameevent:TextView
-    lateinit var information_detailevent:TextView
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +32,8 @@ class ResultActivity : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
         val user = mAuth!!.currentUser
+
+
 
         result_emaildata.text = user!!.email
 
@@ -43,8 +45,8 @@ class ResultActivity : AppCompatActivity() {
             }
         }
 
-        information_nameevent = findViewById(R.id.getname) as TextView
-        information_detailevent = findViewById(R.id.getdetail) as TextView
+
+
 
         var intent = getIntent()
 
@@ -52,45 +54,25 @@ class ResultActivity : AppCompatActivity() {
 //        information_detailevent!!.setText(""+intent.getStringExtra("detailevent"))
 
 
-        val rootRef = FirebaseDatabase.getInstance().reference
-        val tripsRef = rootRef.child("events")
 
-        val valueEventListener: ValueEventListener = object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val list: MutableList<String?> = ArrayList()
-                for (ds in dataSnapshot.children) {
-                    val nameEvents =
-                        ds.child("nameEvent").getValue(String::class.java)
-                    val detail =
-                        ds.child("detailEvent").getValue(String::class.java)
-                    Log.d("TAG", "$nameEvents / $detail")
-
-                    information_nameevent.setText(nameEvents)
-                    information_detailevent.setText(detail)
-                }
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {}
-        }
-        tripsRef.addListenerForSingleValueEvent(valueEventListener)
 
 
         result_addeventbutton.setOnClickListener {
             val i = Intent(this,addeventActivity::class.java)
             startActivity(i)
-            Toast.makeText(this,"บันทึกข้อมูลกิจกรรม",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"เพิ่มข้อมูลกิจกรรม",Toast.LENGTH_SHORT).show()
         }
 
         result_signOutBtn.setOnClickListener {
             mAuth!!.signOut()
-            Toast.makeText(this,"Signed Out", Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"ออกจากระบบ", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this@ResultActivity,MainActivity::class.java))
             finish()
         }
 
         student_button.setOnClickListener {
             startActivity(Intent(this@ResultActivity,StudentActivity::class.java))
-            Toast.makeText(this,"รายชื่อนักศึกษาชั้นปีที่ 3 สาขาวิทยกาคอมพิวเตอร์และสารสนเทศ",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"รายชื่อกิจกรรม",Toast.LENGTH_SHORT).show()
         }
 
 //        button.setOnClickListener {
