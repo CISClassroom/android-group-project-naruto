@@ -37,7 +37,7 @@ class addeventActivity : AppCompatActivity() {
         dateEnd = findViewById(R.id.dateEnd) as EditText
 
         val t = resources.getStringArray(R.array.credit)
-        val adapter = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,t)
+        val adapter = ArrayAdapter(this,android.R.layout.simple_dropdown_item_1line,t)
         spinner?.adapter = adapter
 
         spinner!!.onItemSelectedListener = object : OnItemSelectedListener {

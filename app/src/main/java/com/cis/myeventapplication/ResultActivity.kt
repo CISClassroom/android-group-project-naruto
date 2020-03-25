@@ -22,18 +22,12 @@ class ResultActivity : AppCompatActivity() {
     var mAuthListener:FirebaseAuth.AuthStateListener? = null
     private val TAG:String = "Result Activity"
 
-
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
         mAuth = FirebaseAuth.getInstance()
         val user = mAuth!!.currentUser
-
-
 
         result_emaildata.text = user!!.email
 
@@ -45,17 +39,10 @@ class ResultActivity : AppCompatActivity() {
             }
         }
 
-
-
-
-        var intent = getIntent()
+        //var intent = getIntent()
 
 //        information_nameevent!!.setText(""+intent.getStringExtra("Nameevent"))
 //        information_detailevent!!.setText(""+intent.getStringExtra("detailevent"))
-
-
-
-
 
         result_addeventbutton.setOnClickListener {
             val i = Intent(this,addeventActivity::class.java)

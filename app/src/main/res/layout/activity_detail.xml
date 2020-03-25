@@ -206,4 +206,20 @@
             android:text="TextView" />
     </LinearLayout>
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/addStudentbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="เพิ่มรายชื่อนักศึกษา" />
+
+    <Button
+        android:id="@+id/showStudentbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ดูรายชื่อนักศึกษา" />
+
 </LinearLayout>
