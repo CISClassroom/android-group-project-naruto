@@ -30,7 +30,7 @@ class StudentActivity : AppCompatActivity() {
 
         listViewItems = findViewById<View>(R.id.listview) as ListView
 
-        toDoItemList = mutableListOf<ToDo>()
+        toDoItemList = mutableListOf()
         adapter = ToDoItemAdapter(this, toDoItemList!!)
         listViewItems!!.setAdapter(adapter)
 
@@ -66,8 +66,8 @@ class StudentActivity : AppCompatActivity() {
                 val currentItem = items.next()
                 val map = currentItem.getValue() as HashMap<String, Any>
                 // add data to object
-                todo.name = map.get("nameEvent") as String
-                todo.object_id = map.get("event_id") as String
+                todo.name = map["nameEvent"] as String
+                todo.object_id = map["event_id"] as String
                 toDoItemList!!.add(todo)
             }
         adapter.notifyDataSetChanged()

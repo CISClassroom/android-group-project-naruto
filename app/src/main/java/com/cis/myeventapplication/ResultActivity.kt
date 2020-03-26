@@ -2,16 +2,10 @@ package com.cis.myeventapplication
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.get
+import com.cis.myeventapplication.add_student_to_event.AddStuToEventActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_result.*
 
 
@@ -44,8 +38,12 @@ class ResultActivity : AppCompatActivity() {
 //        information_nameevent!!.setText(""+intent.getStringExtra("Nameevent"))
 //        information_detailevent!!.setText(""+intent.getStringExtra("detailevent"))
 
+        addStudentToEvent.setOnClickListener{
+            startActivity(Intent(this@ResultActivity,AddStuToEventActivity::class.java))
+        }
+
         result_addeventbutton.setOnClickListener {
-            val i = Intent(this,addeventActivity::class.java)
+            val i = Intent(this,AddeventActivity::class.java)
             startActivity(i)
             Toast.makeText(this,"เพิ่มข้อมูลกิจกรรม",Toast.LENGTH_SHORT).show()
         }

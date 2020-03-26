@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".detailActivity"
-    android:background="@drawable/wallpaper"
+    android:background="@mipmap/background_wallpaper"
     android:gravity="center">
 
     <TextView
