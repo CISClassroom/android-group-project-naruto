@@ -2,7 +2,6 @@ package com.cis.myeventapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
 class ShowListStudentActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
