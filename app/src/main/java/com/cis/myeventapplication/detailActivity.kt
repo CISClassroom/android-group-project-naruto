@@ -12,6 +12,8 @@ class detailActivity : AppCompatActivity() {
 
     lateinit var mDatabase: DatabaseReference
 
+    var event = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
@@ -25,8 +27,9 @@ class detailActivity : AppCompatActivity() {
 //            startActivity(intent)
 //        }
         showStudentbtn.setOnClickListener {
-            val intent = Intent(this@detailActivity,ShowListStudentActivity::class.java)
+            val intent = Intent(this@detailActivity,StudentListActivity::class.java)
             Toast.makeText(this,"ดูรายชื่อนักศึกษาสำหรับกิจกรรมนี้",Toast.LENGTH_SHORT).show()
+            intent.putExtra("event", event)
             startActivity(intent)
         }
 
@@ -55,6 +58,8 @@ class detailActivity : AppCompatActivity() {
                 amountofevent.text = currentItem.get("amount") as String
                 eventStart.text = currentItem.get("dateofstart") as String
                 eventEnd.text = currentItem.get("dateofend") as String
+
+                event = currentItem["nameEvent"] as String
             }
 
         }
