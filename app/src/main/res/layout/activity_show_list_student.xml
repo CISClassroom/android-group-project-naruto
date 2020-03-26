@@ -6,5 +6,4 @@
     android:layout_height="match_parent"
     android:background="@drawable/wallpaper"
     tools:context=".ShowListStudentActivity">
-
 </androidx.constraintlayout.widget.ConstraintLayout>
