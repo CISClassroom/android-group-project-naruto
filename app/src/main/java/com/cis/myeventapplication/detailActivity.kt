@@ -19,11 +19,11 @@ class detailActivity : AppCompatActivity() {
         mDatabase = FirebaseDatabase.getInstance().reference
         mDatabase.orderByKey().addListenerForSingleValueEvent(itemListener)
 
-        addStudentbtn.setOnClickListener {
-            val intent = Intent(this@detailActivity,AddTodoStudentActivity::class.java)
-            Toast.makeText(this,"เพิ่มรายชื่อนักศึกษาสำหรับกิจกรรมนี้",Toast.LENGTH_SHORT).show()
-            startActivity(intent)
-        }
+//        addStudentbtn.setOnClickListener {
+//            val intent = Intent(this@detailActivity,AddTodoStudentActivity::class.java)
+//            Toast.makeText(this,"เพิ่มรายชื่อนักศึกษาสำหรับกิจกรรมนี้",Toast.LENGTH_SHORT).show()
+//            startActivity(intent)
+//        }
         showStudentbtn.setOnClickListener {
             val intent = Intent(this@detailActivity,ShowListStudentActivity::class.java)
             Toast.makeText(this,"ดูรายชื่อนักศึกษาสำหรับกิจกรรมนี้",Toast.LENGTH_SHORT).show()
