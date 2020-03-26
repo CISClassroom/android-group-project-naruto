@@ -11,7 +11,7 @@ import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_addevent.*
 
 
-class addeventActivity : AppCompatActivity() {
+class AddeventActivity : AppCompatActivity() {
 
     private  val TAG:String = "addevent Activity"
 
@@ -38,9 +38,9 @@ class addeventActivity : AppCompatActivity() {
 
         val t = resources.getStringArray(R.array.credit)
         val adapter = ArrayAdapter(this,android.R.layout.simple_dropdown_item_1line,t)
-        spinner?.adapter = adapter
+        spinner.adapter = adapter
 
-        spinner!!.onItemSelectedListener = object : OnItemSelectedListener {
+        spinner.onItemSelectedListener = object : OnItemSelectedListener {
             override fun onItemSelected(
                 adapterView: AdapterView<*>,
                 view: View,
@@ -56,11 +56,11 @@ class addeventActivity : AppCompatActivity() {
             saveEvent()
 
            val intent = Intent(this,ResultActivity::class.java)
-           intent.putExtra("Nameevent",""+addevent_name!!.getText().toString())
-            intent.putExtra("detailevent",""+addevent_detail!!.getText().toString())
-            intent.putExtra("amount",""+amounteditText!!.getText().toString())
-            intent.putExtra("dateStart",""+dateStart!!.getText().toString())
-            intent.putExtra("dateEnd",""+dateEnd!!.getText().toString())
+           intent.putExtra("Nameevent",""+ addevent_name.text.toString())
+            intent.putExtra("detailevent",""+addevent_detail.text.toString())
+            intent.putExtra("amount",""+amounteditText.text.toString())
+            intent.putExtra("dateStart",""+dateStart.text.toString())
+            intent.putExtra("dateEnd",""+dateEnd.text.toString())
 
             if(addevent_name.text.isNotEmpty()
                 && addevent_detail.text.isNotEmpty()

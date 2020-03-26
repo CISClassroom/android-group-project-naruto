@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@mipmap/background_wallpaper"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:background="@drawable/wallpaper">
+    tools:context=".LoginActivity">
 
     <EditText
         android:id="@+id/login_emaileditText"
@@ -27,14 +27,14 @@
         android:id="@+id/login_loginBtn"
         android:layout_width="160dp"
         android:layout_height="43dp"
-        android:layout_marginBottom="200dp"
+        android:layout_marginTop="16dp"
         android:background="#FFFFFF"
         android:text="Sign in"
         android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_passwordeditText2" />
 
     <ImageView
         android:id="@+id/imageView"
