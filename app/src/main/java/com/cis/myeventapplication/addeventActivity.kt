@@ -84,7 +84,7 @@ class AddeventActivity : AppCompatActivity() {
         val detailEvent = addevent_detailEditText4.text.toString()
         if (detailEvent.isEmpty()){
             //addevent_detail.error = "Please enter a description of Event"
-            Toast.makeText(this,"กรุณาใส่คำอธิบายกิจกรมม",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"กรุณาใส่รายละเอียดกิจกรมม",Toast.LENGTH_SHORT).show()
             return
         }
 
