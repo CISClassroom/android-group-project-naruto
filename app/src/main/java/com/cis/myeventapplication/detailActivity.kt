@@ -18,14 +18,9 @@ class detailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        mDatabase = FirebaseDatabase.getInstance().reference
-        mDatabase.orderByKey().addListenerForSingleValueEvent(itemListener)
+        mDatabase = FirebaseDatabase.getInstance().reference  //reference การดึงข้อมูลมาทั้งหมด getreference เลือกมา1 table
+        mDatabase.orderByKey().addListenerForSingleValueEvent(itemListener) //สั่งให้ m มันทำงาน ตอนที่เรากด แยกฟังก์ชันด้วย itemlistener
 
-//        addStudentbtn.setOnClickListener {
-//            val intent = Intent(this@detailActivity,AddTodoStudentActivity::class.java)
-//            Toast.makeText(this,"เพิ่มรายชื่อนักศึกษาสำหรับกิจกรรมนี้",Toast.LENGTH_SHORT).show()
-//            startActivity(intent)
-//        }
         showStudentbtn.setOnClickListener {
             val intent = Intent(this@detailActivity,StudentListActivity::class.java)
             Toast.makeText(this,"ดูรายชื่อนักศึกษาสำหรับกิจกรรมนี้",Toast.LENGTH_SHORT).show()
@@ -33,7 +28,7 @@ class detailActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-    }
+    } //เดึงดาต้าเบส
     var itemListener: ValueEventListener = object : ValueEventListener {
 
         override fun onDataChange(dataSnapshot: DataSnapshot) {

@@ -36,13 +36,13 @@ class AddStuToEventActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_stu_to_event)
-        mDatabase = FirebaseDatabase.getInstance().reference
-        mDatabase.orderByKey().addListenerForSingleValueEvent(itemListener)
+        mDatabase = FirebaseDatabase.getInstance().reference //reference การดึงข้อมูลมาทั้งหมด getreference เลือกมา1 table
+        mDatabase.orderByKey().addListenerForSingleValueEvent(itemListener) //สั่งให้ m มันทำงาน ตอนที่เรากด แยกฟังก์ชันด้วย itemlistener
         toDoItemList = mutableListOf()
         onClick()
     }
 
-    private var itemListener: ValueEventListener = object : ValueEventListener {
+    private var itemListener: ValueEventListener = object : ValueEventListener { //เดึงดาต้าเบส
 
         override fun onDataChange(dataSnapshot: DataSnapshot) {
             addDataToList(dataSnapshot.child("events"))
@@ -60,14 +60,12 @@ class AddStuToEventActivity : AppCompatActivity() {
         // check if the collection has any to do items or not
         while (items.hasNext()) {
             // get current item
-            val todo = ToDo.create()
-            val currentItem = items.next()
-            val map = currentItem.getValue() as HashMap<String, Any>
+            val todo = ToDo.create() //ดึงTodo ออกมาใช้
+            val currentItem = items.next()//เอาข้อมูลที่มีไปแทนค่า
+            val map = currentItem.getValue() as HashMap<String, Any> //hasmap คือ การเอาtableมา
             // add data to object
             todo.name = map["nameEvent"] as String
             todo.object_id = map["event_id"] as String
-
-
             toDoItemList!!.add(todo)
         }
 

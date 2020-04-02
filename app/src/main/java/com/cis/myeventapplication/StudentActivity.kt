@@ -26,9 +26,10 @@ class StudentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_student)
         mDatabase = FirebaseDatabase.getInstance().reference
-        mDatabase.orderByKey().addListenerForSingleValueEvent(itemListener)
+        //reference การดึงข้อมูลมาทั้งหมด getreference เลือกมา1 table
+        mDatabase.orderByKey().addListenerForSingleValueEvent(itemListener) //สั่งให้ m มันทำงาน ตอนที่เรากด แยกฟังก์ชันด้วย itemlistener
 
-        listViewItems = findViewById<View>(R.id.listview) as ListView
+        listViewItems = findViewById<View>(R.id.listview) as ListView //เก็บid listview มาเก็บในlistviewItems
 
         toDoItemList = mutableListOf()
         adapter = ToDoItemAdapter(this, toDoItemList!!)
@@ -57,16 +58,16 @@ class StudentActivity : AppCompatActivity() {
         }
     }
     private fun addDataToList(dataSnapshot: DataSnapshot) {
-        val items = dataSnapshot.children.iterator()
+        val items = dataSnapshot.children.iterator() //ดึงข้อมูลมาจากฐานข้อมูลทั้งหมด มาเก็บไว้ในitems select*from event children เอาทั้งหมด child เจาะจง ว่าจะเอาข้อมูลไหน
         // Check if current database contains any collection
             // check if the collection has any to do items or not
-            while (items.hasNext()) {
+            while (items.hasNext()) { //ถ้ามีข้อมูลในitems
                 // get current item
-                val todo = ToDo.create()
-                val currentItem = items.next()
-                val map = currentItem.getValue() as HashMap<String, Any>
+                val todo = ToDo.create() //ดึงTodo ออกมาใช้
+                val currentItem = items.next() //เอาข้อมูลที่มีไปแทนค่า
+                val map = currentItem.getValue() as HashMap<String, Any> //hasmap คือ การเอาtableมา
                 // add data to object
-                todo.name = map["nameEvent"] as String
+                todo.name = map["nameEvent"] as String //ดึงเอา feild ย่อยๆมา
                 todo.object_id = map["event_id"] as String
                 toDoItemList!!.add(todo)
             }

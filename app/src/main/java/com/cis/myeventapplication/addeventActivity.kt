@@ -115,9 +115,9 @@ class AddeventActivity : AppCompatActivity() {
         }
 
 
-        val ref = FirebaseDatabase.getInstance().getReference("events")
+        val ref = FirebaseDatabase.getInstance().getReference("events") // การดึงข้อมูลจาก events
 
-        val event_id = ref.push().key
+        val event_id = ref.push().key //ดึงไอดีที่จะสร้างมาเก็บไว้ในevent_id
 
         val events_student = event_id?.let { Event(it,nameEvent, detailEvent,typeEvent,amount,dateStart,dateEnd)}
 

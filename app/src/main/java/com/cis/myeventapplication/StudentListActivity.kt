@@ -17,12 +17,12 @@ class StudentListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_student_list)
 
-        mDatabase = FirebaseDatabase.getInstance().reference
-        mDatabase.orderByKey().addListenerForSingleValueEvent(itemListener)
+        mDatabase = FirebaseDatabase.getInstance().reference //reference การดึงข้อมูลมาทั้งหมด getreference เลือกมา1 table
+        mDatabase.orderByKey().addListenerForSingleValueEvent(itemListener) //สั่งให้ m มันทำงาน ตอนที่เรากด แยกฟังก์ชันด้วย itemlistener
 
     }
 
-    private var itemListener: ValueEventListener = object : ValueEventListener {
+    private var itemListener: ValueEventListener = object : ValueEventListener { //เดึงดาต้าเบส
 
         override fun onDataChange(dataSnapshot: DataSnapshot) {
             // call function
@@ -39,7 +39,7 @@ class StudentListActivity : AppCompatActivity() {
         val items = dataSnapshot.children.iterator()
         val list = ArrayList<String>()
 
-        val event = intent.extras!!.getString("event")
+        val event = intent.extras!!.getString("event") //เลือกกิจกรรม
         // Check if current database contains any collection
         // check if the collection has any to do items or not
         while (items.hasNext()) {
@@ -48,15 +48,15 @@ class StudentListActivity : AppCompatActivity() {
             val currentItem = items.next()
             val map = currentItem.value as HashMap<*, *>
 
-            if( map["event_name"] as String == event){
-                for (t in map["student_name"] as ArrayList<*>){
-                    list.add(t as String)
+            if( map["event_name"] as String == event){ // เช็คว่าที่เราเลือกตรงกับฐานข้อมูลไหม
+                for (t in map["student_name"] as ArrayList<*>){ //t = ค่าที่อยู่ใน student name
+                    list.add(t as String)//แอดข้อมูลชื่อนักศึกษาเข้าไปในlist
                 }
             }
 
             // add data to object
         }
-        mShowStudentListAdapter = ShowStudentListAdapter(this, list)
+        mShowStudentListAdapter = ShowStudentListAdapter(this, list) //เอารายชื่อนักศึกษาไปเก็บไว้ในadapter
 
         rvStudent.apply {
             layoutManager = LinearLayoutManager(applicationContext)
